@@ -3,7 +3,7 @@ Arduino library for MX1508 dual DC motor driver compatible with the ESP32.
 
 This was originally from the wonderful AVR Library at https://github.com/Saeterncj/MX1508.git.  This is my first library, so I'm also using their project as a skeleton for the extra information. 
 
-It was modified for the ESP32 to use the LEDC Driver to send the PWM signals for speed control.  Since the ESP32 can multiplex many of its pin functions, this library creates PWM Channels and assigns them to the pins specified. 
+It was modified for the ESP32 to use the LEDC Driver to send the PWM signals for speed control.  Since the ESP32 can multiplex many of its pin functions, this library creates PWM Channels and assigns them to the pins specified.    
 
 
 
@@ -26,7 +26,11 @@ MX1508 motorA(PINA,PINB, CH1, CH2);
 void setup() {}
 
 void loop() {
-    motorA.motorGo(200);            // Pass the speed to the motor motorGo and motorRev 0-255.    Depending on voltage/motor, you will need to adjust to figure out a starting value.
+    motorA.motorGo(200);            // Pass the speed to the motor 0-255
+    delay(100);
+    motorA.stopMotor();             // Stop no argument
+    delay(100);
+    motorA.motorRev(200);           // Pass the speed to the motor 0-255
 }
 ```
 
