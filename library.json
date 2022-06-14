@@ -1,6 +1,6 @@
 {
     "name": "ESPMX1508",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "An ESP32 Arduino Library for the MX1508 Motor Driver Board",
     "keywords": "mx1508, esp32, arduino",
     "repository":
@@ -18,9 +18,6 @@
     ],
     "license": "MIT",
     "homepage": "https://github.com/ElectroMagus/ESP32MX1508",
-    "dependencies": {
-      "ownername/print": "~1.3.0"
-    },
     "frameworks": "arduino",
     "platforms": "espressif32"
   }
