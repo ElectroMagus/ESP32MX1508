@@ -32,11 +32,11 @@ void loop() {
 
 ## Methods and Functions
   + motorGo(pwmVal)
-    - This sets the PWM val which is related to the speed, depending on voltage and motor type. 
-  + motorRev(pwmVal)
     - This sets the PWM val which is related to the speed, depending on voltage and motor type.
+  + motorRev(pwmVal)
+    - This sets the PWM val which is related to the speed, depending on voltage and motor type
   + stopMotor()
-    - Simply stops the motor.
+    - Simply stops the motor
   + getPwm()
-    - Returns the current PWM value of the motor.
+    - Returns the current PWM value of the motor
     
