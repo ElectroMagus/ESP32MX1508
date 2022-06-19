@@ -17,7 +17,6 @@ ESP32MX1508     KEYWORD1
 
 motorGo	      KEYWORD2
 motorRev	KEYWORD2
-getPWM	      KEYWORD2
 stopMotor	    KEYWORD2
 
 
