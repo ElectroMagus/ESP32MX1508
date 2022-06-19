@@ -10,7 +10,7 @@ It was modified for the ESP32 to use the LEDC Driver to send the PWM signals for
 
 ## Objective
 This library is made to simplify the use of MX1508.  This Arduino Libary only requires a few lines of code to 
-start controlling DC motors with mx1508.  8, 12, and 16 bit resolution are suppored for control of the motor speed.
+start controlling DC motors with mx1508.  Resolutions of 8, 12, and 16 bits are supported for control of the motor speed.
  
 ```
 #include <ESP32MX1508.h>
