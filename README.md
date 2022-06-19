@@ -30,7 +30,7 @@ void setup() {}
 void loop() {
     motorA.motorGo(200);            // Pass the speed to the motor: 0-255 for 8 bit resolution
     delay(100);
-    motorA.stopMotor();             // Stop no argument
+    motorA.motorStop();             // Stop no argument
     delay(100);
     motorA.motorRev(200);           // Pass the speed to the motor: 0-255 for 8 bit resolution
     delay(100);
@@ -42,6 +42,6 @@ void loop() {
     - This sets the PWM val which is related to the speed, depending on selected resolution
   + motorRev(pwmVal)
     - This sets the PWM val which is related to the speed, depending on selected resolution
-  + stopMotor()
+  + motorStop()
     - Simply stops the motor
   

@@ -26,7 +26,12 @@ MX1508::MX1508( uint8_t pinIN1, uint8_t pinIN2, uint8_t ledCH1, uint8_t ledCH2, 
   ledcAttachPin(_pinIN2, _ledCH2);
 }
 
-void MX1508::stopMotor() {
+void MX1508::stopMotor() {                      // Kept for backwards compatibility
+  ledcWrite(_ledCH1, 0);
+  ledcWrite(_ledCH2, 0);
+}
+
+void MX1508::motorStop() {
   ledcWrite(_ledCH1, 0);
   ledcWrite(_ledCH2, 0);
 }

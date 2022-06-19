@@ -9,15 +9,17 @@ class MX1508 {
     MX1508(uint8_t pinIN1, uint8_t pinIN2, uint8_t ledCH1, uint8_t ledCH2, uint8_t resolution);
     void motorGo(long pwmVal); 
     void motorRev(long pwmVal);
-    void stopMotor(); 
+    void motorStop(); 
+    void stopMotor();                 // Kept for backwards compatibility
+    
 	  
   private:
-    uint8_t _pinIN1;
+    uint8_t _pinIN1;        // Pin to MX1508
     uint8_t _pinIN2;
     uint8_t _ledCH1;        // ESP32 ledc Channel for PWM   
     uint8_t _ledCH2;
-    uint8_t resolution;         
-	  long _pwmVal;
+    uint8_t resolution;     // PWM Resolution     
+	  long _pwmVal;           // PWM Value (speed)
 };
 
 #endif
