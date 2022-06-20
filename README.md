@@ -17,13 +17,16 @@ start controlling DC motors with mx1508.  Resolutions of 8, 12, and 16 bits are 
 
 #define PINA 9
 #define PINB 10
-#define CH1 0                   // 16 Channels (0-15) are availible.
+#define CH1 0                   // 16 Channels (0-15) are availible
 #define CH2 1                   // Make sure each pin is a different channel and not in use by other PWM devices (servos, LED's, etc)
-#define RES 8                   // Resolution in bits:  8 (0-255),  12 (0-4095), or 16 (0-65535)
-                                // 8 is default and an optional parameter
 
+// Optional Parameters
+#define RES 8                   // Resolution in bits:  8 (0-255),  12 (0-4095), or 16 (0-65535)     
+#define FREQ  5000              // PWM Frequency in Hz    
 
-MX1508 motorA(PINA,PINB, CH1, CH2, RES);
+MX1508 motorA(PINA,PINB, CH1, CH2);                       // Default-  8 bit resoluion at 2500 Hz
+//MX1508 motorA(PINA,PINB, CH1, CH2, RES);                // Specify resolution
+//MX1508 motorA(PINA,PINB, CH1, CH2, RES, FREQ);          // Specify resolution and frequency
 
 void setup() {}
 
