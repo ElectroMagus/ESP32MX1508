@@ -20,7 +20,6 @@ The LEDC driver supports 8, 12 and 16 bit PWM resolution and can operate at a va
 
 This library is made to simplify the use of MX1508 by allowing for the simple setup of motors and then using functions to drive them.    
 ```
-
 #include <ESP32MX1508.h>
   
 
@@ -43,12 +42,13 @@ void setup() {
 }
 
 void loop() {
-	motorA.motorGo(200); // Pass the speed to the motor: 0-255 for 8 bit resolution
-	delay(100);	
-	motorA.motorStop(); // Stop no argument
-	delay(100);
-	motorA.motorRev(200); // Pass the speed to the motor: 0-255 for 8 bit resolution
-	delay(100);
+    motorA.motorGo(200);            // Pass the speed to the motor: 0-255 for 8 bit resolution
+    delay(100);
+    motorA.motorStop();             // Soft Stop    -no argument
+    delay(100);
+    motorA.motorRev(200);           // Pass the speed to the motor: 0-255 for 8 bit resolution
+    delay(100);
+    MotorA.motorBrake();            // Hard Stop    -no arguement
 }
 
 ```
