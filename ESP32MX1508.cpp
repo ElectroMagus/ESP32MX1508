@@ -11,6 +11,7 @@ MX1508::MX1508( uint8_t pinIN1, uint8_t pinIN2, uint8_t ledCH1, uint8_t ledCH2) 
   pinMode(_pinIN2, OUTPUT);
   ledcSetup(_ledCH2, 2500, 8);         // Setup channel at 2500Hz with 8 bit (0-255) resolution
   ledcAttachPin(_pinIN2, _ledCH2);
+  _maxpwm = 255;                       // Sets a flag on the motor so the object knows the max pwm value
 }
 
 MX1508::MX1508( uint8_t pinIN1, uint8_t pinIN2, uint8_t ledCH1, uint8_t ledCH2, uint8_t resolution) {
@@ -24,6 +25,9 @@ MX1508::MX1508( uint8_t pinIN1, uint8_t pinIN2, uint8_t ledCH1, uint8_t ledCH2, 
   pinMode(_pinIN2, OUTPUT);
   ledcSetup(_ledCH2, 2500, resolution);         // Setup channel at 2500Hz with 8 (0-255), 12 (0-4095), or 16 (0-65535) bit resolution
   ledcAttachPin(_pinIN2, _ledCH2);
+  if (resolution == 8) { _maxpwm = 255; }     // Sets a flag on the motor so the object knows the max pwm value
+  if (resolution == 12) { _maxpwm = 4095; }
+  if (resolution == 16) { _maxpwm = 65535; }
 }
 
 MX1508::MX1508( uint8_t pinIN1, uint8_t pinIN2, uint8_t ledCH1, uint8_t ledCH2, uint8_t resolution, long freq) {
@@ -37,6 +41,9 @@ MX1508::MX1508( uint8_t pinIN1, uint8_t pinIN2, uint8_t ledCH1, uint8_t ledCH2, 
   pinMode(_pinIN2, OUTPUT);
   ledcSetup(_ledCH2, freq, resolution);         // Setup channel at specified Hz with 8 (0-255), 12 (0-4095), or 16 (0-65535) bit resolution
   ledcAttachPin(_pinIN2, _ledCH2);
+  if (resolution == 8) { _maxpwm = 255; }     // Sets a flag on the motor so the object knows the max pwm value
+  if (resolution == 12) { _maxpwm = 4095; }
+  if (resolution == 16) { _maxpwm = 65535; }
 }
 
 void MX1508::stopMotor() {                      // Kept for backwards compatibility
@@ -50,8 +57,9 @@ void MX1508::motorStop() {
 }
 
 void MX1508::motorBrake() {
-  digitalWrite(_pinIN1, 1);                     // Sending a HIGH signal directly to the pin for braking
-  digitalWrite(_pinIN2, 1);                     // This allows for simply sending the max signal to be sent regardless of PWM resolution
+  ledcWrite(_ledCH1, _maxpwm);
+  ledcWrite(_ledCH2, _maxpwm);
+ 
 }
 
 void MX1508::motorGo(long pwmSpeed) {

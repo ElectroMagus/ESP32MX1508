@@ -23,6 +23,7 @@ class MX1508 {
     uint8_t resolution;     // PWM Resolution  
     long freq;              // PWM Freq   
 	  long _pwmVal;           // PWM Value (speed)
+    long _maxpwm;           // Max PWM Value of the Motor
 };
 
 #endif
