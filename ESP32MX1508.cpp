@@ -49,6 +49,11 @@ void MX1508::motorStop() {
   ledcWrite(_ledCH2, 0);
 }
 
+void MX1508::motorBrake() {
+  digitalWrite(_pinIN1, 1);                     // Sending a HIGH signal directly to the pin for braking
+  digitalWrite(_pinIN2, 1);                     // This allows for simply sending the max signal to be sent regardless of PWM resolution
+}
+
 void MX1508::motorGo(long pwmSpeed) {
   _pwmVal = pwmSpeed;
   ledcWrite(_ledCH1, _pwmVal);
