@@ -18,8 +18,9 @@ void setup() {}
 void loop() {
     motorA.motorGo(200);            // Pass the speed to the motor: 0-255 for 8 bit resolution
     delay(100);
-    motorA.motorStop();             // Stop no argument
+    motorA.motorStop();             // Soft Stop    -no argument
     delay(100);
     motorA.motorRev(200);           // Pass the speed to the motor: 0-255 for 8 bit resolution
     delay(100);
+    MotorA.motorBrake();            // Hard Stop    -no arguement
 }

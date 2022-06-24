@@ -1,6 +1,6 @@
 {
     "name": "ESPMX1508",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "An ESP32 Arduino Library for the MX1508 Motor Driver Board",
     "keywords": "mx1508, esp32, arduino",
     "repository":
