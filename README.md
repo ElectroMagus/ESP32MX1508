@@ -5,7 +5,7 @@ Arduino library for MX1508 dual DC motor driver compatible with the ESP32.
 
   
 
-This was inspired by [this wonderful AVR Library](https://github.com/Saeterncj/MX1508). This is my first library, so please feel free to provide feedback.
+This was inspired by [this AVR Library](https://github.com/Saeterncj/MX1508). 
 
 The MX1508 Motor Driver is a nice, low cost motor driver  works from 2-10VDC, with a 1.5A operating current (2A peak).   The driver is ideal for battery powered, smaller DC motors.  
 
