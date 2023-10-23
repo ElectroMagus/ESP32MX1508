@@ -48,7 +48,7 @@ void loop() {
     delay(100);
     motorA.motorRev(200);           // Pass the speed to the motor: 0-255 for 8 bit resolution
     delay(100);
-    MotorA.motorBrake();            // Hard Stop    -no arguement
+    motorA.motorBrake();            // Hard Stop    -no arguement
 }
 
 ```
